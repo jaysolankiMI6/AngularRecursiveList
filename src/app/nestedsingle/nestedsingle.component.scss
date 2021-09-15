@@ -1,0 +1,14 @@
+body {
+    zoom: 0.8;
+}
+
+:host {
+    display: block;
+    zoom: 0.8;
+    // border: 1px solid black;
+    padding: 20px;
+}
+
+.lbl{
+    margin: 5px;
+}

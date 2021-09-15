@@ -1,0 +1,57 @@
+<p>Nested Single works!</p>
+
+<form [formGroup]="skillsForm" (ngSubmit)="onSubmit()">
+ 
+    <div class="form-group">
+      <label for="name">Name</label>
+      <!-- <label for="name" class="lbl">Name </label> -->
+      <input type="text" class="form-control" id="name" name="name" formControlName="name">
+    </div>
+   
+   
+    Skills:
+    <div formArrayName="skills">
+      <div *ngFor="let skill of skills.controls; let i=index">
+        <div [formGroupName]="i" class="form-group d-flex align-items-center">
+          {{i}}
+          skill name :
+          <input type="text" class="form-control w-25" formControlName="skill">
+          exp:
+          <input type="text" class="form-control w-25" formControlName="exp">
+   
+          <button class="btn btn-primary" (click)="removeSkill(i)">Remove</button>
+        </div>
+      </div>
+    </div>
+   
+    <p>
+      <button class="btn btn-primary my-1" type="submit">Submit</button>
+    </p>
+   
+  </form>
+   
+   
+  <p>
+    <button class="btn btn-primary" type="button" (click)="addSkills()">Add</button>
+  </p>
+   
+  {{this.skillsForm.value | json}}
+
+
+  <table class="table">
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Skill Name</th>
+        <th>Exp</th>
+    </tr>
+    <!-- <div *ngIf="skills"> -->
+    <tr *ngFor="let test of skills.controls; let i = index" class="outter">
+        <td style="width: 100px;">{{i + 1}}</td>
+        <td style="width: 300px;">{{this.skillsForm.value.name}}</td>
+        <td style="width: 300px;">{{test.value.skill}}</td>
+        <td style="width: 300px;">{{test.value.exp}}</td>
+    </tr>
+    <!-- </div> -->
+
+</table>

@@ -1,0 +1,63 @@
+#ah-overlay-bg {
+    position: fixed;
+    display: block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  #ah-nav-container {
+    display: block;
+    position: fixed;
+    width: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+    outline: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #fff;
+    color: rgba(0,0,0,0.87);
+    transition-duration: .4s;
+    transition-timing-function: cubic-bezier(.25,.8,.25,1);
+    transition-property: width;
+  }
+  
+  .ah-navbar-shadow {
+    box-shadow: 0px 8px 10px -5px rgba(0,0,0,0.2), 0px 16px 24px 2px rgba(0,0,0,0.14), 0px 6px 30px 5px rgba(0,0,0,0.12);
+  }
+  
+  #sidebar-logo {
+    width: 160px;
+  }
+  
+  a {
+    padding: 6px;
+    color: rgb(66, 82, 110);
+    display: block;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+  
+    li {
+      display: block;      
+    }
+  
+    li:hover {
+      background-color: #00A4D8;
+    }
+  }
+  
+  .row > ul > li {
+    padding: 15px 10px;
+  }
+  

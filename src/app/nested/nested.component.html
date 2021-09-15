@@ -1,0 +1,128 @@
+<p>nested works!</p>
+<div>Welcome {{username}}!</div>
+
+<table class="table">
+    <tr>
+        <th style="width: 50px;">#</th>
+        <th style="width: 50px;">label</th>
+        <th style="width: 50px;">icon</th>
+    </tr>
+    <tr *ngFor="let user of users; let i = index" class="outter">
+        <td style="width: 50px;">{{i + 1}}</td>
+        <td style="width: 50px;" (mouseenter)="openNested(user)">{{user.label}}</td>
+        <i class="{{user.icon}}">
+        </i>
+        <td *ngIf="show && user.label == key" class="inner">
+    <tr *ngFor="let data of inneritem; let i = index" class="outter">
+        <td style="width: 50px;">{{i + 1}}</td>
+        <td style="width: 50px;" (mouseenter)="openNested2(data)">{{data.label}}</td>
+        <i class="{{data.icon}}"></i>
+        <td *ngIf="show2 && data.label == key2" class="inner">
+    <tr *ngFor="let data of inneritem2; let i = index">
+        <td style="width: 50px;">{{i + 1}}</td>
+        <td style="width: 50px;" (mouseenter)="openNested3(data)">{{data.label}}</td>
+        <i class="{{data.icon}}"></i>
+        <td *ngIf="show3 && data.label == key3" class="inner">
+    <tr *ngFor="let data of inneritem3; let i = index">
+        <td style="width: 50px;">{{i + 1}}</td>
+        <td style="width: 50px;" (mouseenter)="title = data.label">{{data.label}}</td>
+        <i class="{{data.icon}}"></i>
+    </tr>
+    </td>
+    </tr>
+    </td>
+    </tr>
+    </td>
+    </tr>
+
+</table>
+
+
+
+<ul *ngFor="let data of users">
+    <li (mouseenter)="expand(data)">{{data.label}}</li>
+    <div *ngIf="data.items && data.label == key">
+        <ol *ngFor="let data2 of data.items">
+            <li (mouseenter)="expand(data2)">{{data2.label}}</li>
+            <div *ngIf="data2.items && data2.label == key2">
+                <ol *ngFor="let data3 of data2.items">
+                    <li (mouseenter)="expand(data)">{{data3.label}}</li>
+                </ol>
+            </div>
+        </ol>
+    </div>
+</ul>
+
+<!-- <span *ngFor="let item of users">
+    Handle branch node buttons here
+    <span *ngIf="item.items && item.items.length > 0">
+      <button mat-raised-button color="primary" [matMenuTriggerFor]="menu.childMenu">
+        {{item.label}}
+        <mat-icon>expand_more</mat-icon>
+      </button>
+      <app-menu-item #menu [items]="item.items"></app-menu-item>
+    </span>
+    Leaf node buttons here
+    <span *ngIf="!item.items || item.items.length === 0">
+      <button mat-button color="primary" [routerLink]="item.route">
+        {{item.label}}
+      </button>
+    </span>
+  </span> -->
+
+
+
+
+<!-- <span *ngFor="let item of users">
+    <span *ngIf="item.items && item.items.length > 0">
+        <button color="primary" (mouseenter)="expand(item)">{{item.label}}</button>
+        <div *ngIf="item.label == key">
+            <span *ngFor="let item of item.items">
+                <span *ngIf="item.items && item.items.length > 0">
+                    <button color="primary" (mouseenter)="expand(item)">{{item.label}}</button>
+                </span>
+                <span *ngIf="!item.items || item.items.length === 0">
+                    <button color="primary">{{item.label}}</button>
+                </span>
+            </span>
+        </div>
+    </span>
+    <span *ngIf="!item.items || item.items.length === 0">
+        <button color="primary">{{item.label}}</button>
+    </span>
+</span> -->
+
+
+
+<div class="terminal">
+    <pre class="textdesign">{{title}}</pre>
+</div>
+
+<!-- <table class="table" *ngIf="show">
+        <tr>
+            <th style="width: 50px;">#</th>
+            <th style="width: 50px;">label</th>
+            <th style="width: 50px;">icon</th>
+        </tr>
+
+        <tr *ngFor="let data of inneritem; let i = index">
+            <td style="width: 50px;">{{i + 1}}</td>
+            <td style="width: 50px;" (click)="openNested2(data.items)">{{data.label}}</td>
+            <i class="{{data.icon}}"></i>
+        </tr>
+    </table> -->
+
+
+<!-- <table class="table" *ngIf="show2">
+        <tr>
+            <th style="width: 50px;">#</th>
+            <th style="width: 50px;">label</th>
+            <th style="width: 50px;">icon</th>
+        </tr>
+
+        <tr *ngFor="let data of inneritem2; let i = index">
+            <td style="width: 50px;">{{i + 1}}</td>
+            <td style="width: 50px;">{{data.label}}</td>
+            <i class="{{data.icon}}"></i>
+        </tr>
+    </table> -->

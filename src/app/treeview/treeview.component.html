@@ -1,0 +1,77 @@
+<!-- <div>
+    {{text}}
+</div> -->
+
+<!-- <ul *ngIf="items.length">
+
+  <li *ngFor="let item of items">
+    <div class="d-flex align-items-center">
+      <i *ngIf="item[key]?.length" (click)="hideShowElement(item)"
+        [ngClass]="{'fa-minus': item.show, 'fa-plus': !item.show}" class="fa ">
+      </i>
+      <h4 [ngClass]="{'ml-2': item[key]?.length, 'ml-4': !item[key]?.length}">{{item.name}}</h4>
+    </div>
+
+    <app-treeview *ngIf="item[key]?.length && item.show" [key]="key" [data]="item[key]"></app-treeview>
+  </li>
+</ul> -->
+
+<!-- <ul *ngIf="items.length">
+
+  <li *ngFor="let item of items">
+    <div class="d-flex align-items-center">
+      <i *ngIf="item[key]?.length" (click)="hideShowElement(item)"
+        [ngClass]="{'fa-minus': item.show, 'fa-plus': !item.show}" class="fa ">
+      </i>
+      <h4 [ngClass]="{'ml-2': item[key]?.length, 'ml-4': !item[key]?.length}">{{item.label}}</h4>
+      <i class="{{item.icon}}"></i>
+    </div>
+
+    <app-treeview *ngIf="item[key]?.length && item.show" [key2]="key" [data2]="item[key]"></app-treeview>
+  </li>
+</ul> -->
+
+
+<!-- <button mat-button [matMenuTriggerFor]="animals">Animal index</button>
+<mat-menu #animals="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
+</mat-menu>
+<mat-menu #vertebrates="matMenu">
+  <button mat-menu-item>Fishes</button>
+  <button mat-menu-item>Amphibians</button>
+  <button mat-menu-item>Reptiles</button>
+  <button mat-menu-item>Birds</button>
+  <button mat-menu-item>Mammals</button>
+</mat-menu> -->
+
+<!-- <button mat-button [matMenuTriggerFor]="tt">Animal index</button>
+
+<mat-menu #tt="matMenu" style="padding: 0px;">
+  <ng-container *ngIf="items.length">
+    <div *ngFor="let item of items">
+
+      <button mat-menu-item *ngIf="item.label">
+        <i class="{{item.icon}}"> </i> {{item.label}}
+      </button>
+      <mat-divider *ngIf="item.separator"></mat-divider>
+      <app-treeview *ngIf="item[key]?.length" [key2]="key" [data2]="item[key]"></app-treeview>
+    </div>
+  </ng-container>
+</mat-menu> -->
+
+<!-- <mat-list>
+	<mat-list-item *ngFor="let item of items" (contextmenu)="onContextMenu($event, item)">
+		{{ item.label }}
+	</mat-list-item>
+</mat-list>
+<div style="visibility: hidden; position: fixed"
+    [style.left]="contextMenuPosition.x"
+    [style.top]="contextMenuPosition.y"
+    [matMenuTriggerFor]="contextMenu">
+</div>
+<mat-menu #contextMenu="matMenu">
+	<ng-template matMenuContent let-item="item">
+		<button mat-menu-item>Action 1</button>
+		<button mat-menu-item>Action 2</button>
+	</ng-template>
+</mat-menu> -->
