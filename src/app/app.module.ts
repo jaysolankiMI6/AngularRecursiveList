@@ -38,7 +38,8 @@ import {MatListModule} from '@angular/material/list';
     MatSliderModule,
     BrowserAnimationsModule,
     MatMenuModule,
-    MatDividerModule
+    MatDividerModule,
+    MatListModule
     // MatMenuTrigger
     // ComponentsModule
   ],

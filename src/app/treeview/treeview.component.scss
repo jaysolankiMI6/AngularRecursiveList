@@ -2,3 +2,56 @@ li {
     list-style: none;
 }
 
+.outter {
+    position: relative;
+    // list-style: none;
+    // padding: 0;
+}
+
+.inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(85%);
+}
+
+.separator {
+    padding: .5em 0;
+    border-bottom: 1px solid #ccc;
+}
+
+ul {
+    width: 200px;
+}
+
+ul li {
+    padding: 5px;
+    // border-bottom: 1px solid #ccc;
+}
+
+ul li img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+ul li h1 {
+    margin-left: 70px;
+    margin-top: -50px;
+    font-size: 17px;
+    font-weight: 550;
+}
+
+ul li p {
+    margin-left: 70px;
+    margin-top: 0px;
+}
+
+ul li:hover {
+    background: #DFEEEA;
+}
+
+.rghticon {
+    text-align: center;
+    margin-top: 5px;
+}
