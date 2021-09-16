@@ -16,7 +16,7 @@ li {
 }
 
 .separator {
-    padding: .5em 0;
+    padding: 0.5em 0;
     border-bottom: 1px solid #ccc;
 }
 
@@ -25,8 +25,18 @@ ul {
 }
 
 ul li {
-    padding: 5px;
+    // padding: 5px;
+    cursor: pointer;
+    position: relative;
+    padding: 8px 2px;
     // border-bottom: 1px solid #ccc;
+}
+
+.active {
+    // color: blue;
+}
+.active ul {
+    // display: block !important;
 }
 
 ul li img {
@@ -48,7 +58,7 @@ ul li p {
 }
 
 ul li:hover {
-    background: #DFEEEA;
+    background: #dfeeea;
 }
 
 .rghticon {

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 // import { MatMenuTrigger } from '@angular/material';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
 
 @Component({
   selector: 'app-treeview',
@@ -13,12 +13,12 @@ export class TreeviewComponent implements OnInit {
   @Input('data2') items: any = [];
   // @Input('key') key: string = "";
   @Input('key2') key: string = "";
-
+  selected:any;
   // @ViewChild(MatMenuTrigger)
   // contextMenu: MatMenuTrigger;
 
-  constructor() { 
-  } 
+  constructor() {
+  }
   contextMenuPosition = { x: '0px', y: '0px' };
 
   onContextMenu(event: MouseEvent, item: Item) {
@@ -33,8 +33,23 @@ export class TreeviewComponent implements OnInit {
     console.log('this.items', this.items);
   }
 
-  hideShowElement(item: any){
-    item.show = !item.show; 
+  hideShowElement(ev: any, item: any, name: any) {
+    console.log('item ', item);
+    // this.selected = (this.selected === name ? null : name);
+    ev.preventDefault();
+    
+    this.items.forEach((element: any) => {
+      if (element.show == true) {
+        element.show = false;
+      }
+    });
+    item.show = !item.show;
+  }
+  // select(item) {
+  //   this.selected = (this.selected === item ? null : item);
+  // }
+  isActive(name: any) {
+    return this.selected === name;
   }
 }
 
