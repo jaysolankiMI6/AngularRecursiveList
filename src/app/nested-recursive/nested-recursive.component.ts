@@ -149,7 +149,13 @@ export class NestedRecursiveComponent implements OnInit {
           "items": [
             {
               "label": "Remove",
-              "icon": "pi pi-fw pi-calendar-minus"
+              "icon": "pi pi-fw pi-calendar-minus",
+              "items": [
+                {
+                  "label": "Remove",
+                  "icon": "pi pi-fw pi-calendar-minus"
+                }
+              ]
             }
           ]
         }
