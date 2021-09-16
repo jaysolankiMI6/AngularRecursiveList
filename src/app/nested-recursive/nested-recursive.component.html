@@ -1,4 +1,12 @@
-<p>nested-recursive works!</p>
-<!-- <app-treeview [data]="data" [key]="key"></app-treeview> -->
 
-<app-treeview [data2]="data2" [key2]="key2"></app-treeview>
+    <p>nested-recursive works!</p>
+    <!-- <app-treeview [data]="data" [key]="key"></app-treeview> -->
+    <div  (click)="disableContextMenu()" oncontextmenu="return false;" >
+        <img #img src="../../assets/images/nature.jpg" alt="Logo" aria-haspopup="true" (contextmenu)="onrightClick($event)">
+    </div>
+    
+
+    <div *ngIf="contextmenu==true" class="contextmenu" [ngStyle]="{'left.px': contextmenuX, 'top.px': contextmenuY}">
+        <app-treeview [data2]="data2" [key2]="key2"></app-treeview>
+    </div>
+    

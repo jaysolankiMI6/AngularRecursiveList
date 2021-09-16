@@ -76,18 +76,20 @@
 	</ng-template>
 </mat-menu> -->
 
-
+<!-- <div id="sect1" class="container" aria-haspopup="true" (contextmenu)="list = true"> -->
 <ul *ngIf="items.length" class="outter">
     <li *ngFor="let item of items" [ngClass]="{'separator': item.separator}">
         <span *ngIf="item.label" >
       <i class="{{item.icon}}" style="margin-right: 5px;"></i>
-      <label (contextmenu)="hideShowElement($event, item, item.label)"   style="width: 75%; margin: 0 !important;">{{item.label}}</label>
+      <label (mouseenter)="hideShowElement($event, item, item.label)"   style="width: 75%; margin: 0 !important;">{{item.label}}</label>
       <i class="pi pi-angle-right" style="margin-top: 5px; float: right;"*ngIf="item[key]?.length"></i>
       <app-treeview  (mouseleave)="item.show= !item.show;" *ngIf="item[key]?.length && item.show" [key2]="key" [data2]="item[key]" class="inner"
        ></app-treeview>
     </span>
     </li>
 </ul>
+
+<!-- </div> -->
 
 
 <!-- <ul *ngIf="items.length" class="outter">

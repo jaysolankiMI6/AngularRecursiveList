@@ -14,6 +14,7 @@ export class TreeviewComponent implements OnInit {
   // @Input('key') key: string = "";
   @Input('key2') key: string = "";
   selected:any;
+  list: boolean = false;
   // @ViewChild(MatMenuTrigger)
   // contextMenu: MatMenuTrigger;
 

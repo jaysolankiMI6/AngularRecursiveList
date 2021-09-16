@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NestedRecursiveComponent implements OnInit {
   key2: string = "items";
+  contextmenu = false;
+  contextmenuX = 0;
+  contextmenuY = 0;
   data2 = [
     {
       "label": "File",
@@ -190,4 +193,15 @@ export class NestedRecursiveComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onrightClick(event: any) {
+    console.log('a');
+    this.contextmenuX = event.clientX
+    this.contextmenuY = event.clientY
+    this.contextmenu = true;
+  }
+
+  //disables the menu
+  disableContextMenu() {
+    this.contextmenu = false;
+  }
 }

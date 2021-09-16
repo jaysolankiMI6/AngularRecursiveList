@@ -6,13 +6,17 @@ li {
     position: relative;
     // list-style: none;
     // padding: 0;
+    background: white;
+    padding: 5px 0;
+    margin-bottom: 0;
+    box-shadow: 0 2px 10px #0000003d;
 }
 
 .inner {
     position: absolute;
     top: 0;
-    right: 0;
-    transform: translateX(85%);
+    left: 0;
+    transform: translateX(100%);
 }
 
 .separator {
@@ -21,14 +25,14 @@ li {
 }
 
 ul {
-    width: 200px;
+    width: 180px;
 }
 
 ul li {
     // padding: 5px;
     cursor: pointer;
     position: relative;
-    padding: 8px 2px;
+    padding: 8px 14px;
     // border-bottom: 1px solid #ccc;
 }
 
@@ -65,3 +69,11 @@ ul li:hover {
     text-align: center;
     margin-top: 5px;
 }
+
+#sect1 {  
+    height: 420px !important;
+    color: #fff;
+    background-image: url("../../assets/images/nature.jpg");  
+    background-size: 100%;  
+    background-size: cover;  
+} 
